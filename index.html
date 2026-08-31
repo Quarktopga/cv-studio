@@ -1,35 +1,13 @@
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0b0d12" />
-  <title>CV Studio</title>
-  <style>
-    :root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#17191f;background:#f7f7f8}
-    *{box-sizing:border-box}body{margin:0;min-width:320px}button,input{font:inherit}.shell{min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at top,#fff 0,#f7f7f8 55%)}
-    .card{width:min(440px,100%);background:#fff;border:1px solid #e4e5e8;border-radius:20px;padding:32px;box-shadow:0 18px 60px rgba(0,0,0,.08)}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:750;font-size:18px;letter-spacing:-.02em;margin-bottom:34px}.mark{width:30px;height:30px;border-radius:9px;background:#111318;display:grid;place-items:center}.mark:before{content:"";width:14px;height:14px;border:2px solid white;border-radius:4px;transform:rotate(45deg)}
-    h1{font-size:30px;line-height:1.08;letter-spacing:-.04em;margin:0 0 10px}p{color:#666b76;line-height:1.55;margin:0 0 24px}.tabs{display:grid;grid-template-columns:1fr 1fr;background:#f1f2f4;padding:4px;border-radius:10px;margin-bottom:22px}.tabs button{border:0;background:transparent;padding:9px;border-radius:7px;cursor:pointer;color:#666}.tabs button.active{background:#fff;color:#17191f;box-shadow:0 1px 4px rgba(0,0,0,.08);font-weight:650}.field{margin-bottom:14px}.field label{display:block;font-size:13px;font-weight:650;margin-bottom:7px}.field input{width:100%;height:46px;border:1px solid #d8dae0;border-radius:10px;padding:0 13px;outline:0;background:#fff}.field input:focus{border-color:#17191f;box-shadow:0 0 0 3px rgba(23,25,31,.08)}.primary{width:100%;height:46px;border:0;border-radius:10px;background:#111318;color:white;font-weight:650;cursor:pointer}.primary:disabled{opacity:.5;cursor:not-allowed}.message{margin-top:14px;padding:12px 14px;border-radius:10px;background:#f1f5f2;color:#245332;font-size:13px}.error{margin-top:14px;padding:12px 14px;border-radius:10px;background:#fff1f1;color:#8d2424;font-size:13px}.legal{margin-top:20px;text-align:center;font-size:12px;color:#8a8d95}.legal a{color:inherit}.dashboard{min-height:100vh;background:#f7f7f8}.top{height:68px;background:#fff;border-bottom:1px solid #e5e6e9;display:flex;align-items:center;justify-content:space-between;padding:0 28px}.top .brand{margin:0}.account{border:1px solid #dddfe4;background:#fff;border-radius:9px;padding:8px 12px;cursor:pointer}.content{max-width:1100px;margin:auto;padding:60px 28px}.content h1{font-size:40px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin-top:30px}.cv{background:#fff;border:1px solid #e1e2e6;border-radius:16px;padding:18px;cursor:pointer}.cv:hover{box-shadow:0 10px 30px rgba(0,0,0,.07)}.paper{aspect-ratio:210/297;background:#fff;border:1px solid #e6e7ea;border-radius:8px;padding:22px;box-shadow:0 5px 20px rgba(0,0,0,.06)}.paper strong{display:block;font-size:17px}.paper span{display:block;font-size:9px;color:#777;margin-top:3px}.line{height:1px;background:#ddd;margin:14px 0}.mini{height:4px;background:#e5e6e9;margin:8px 0;border-radius:4px}.name{font-weight:700;margin-top:14px}.cv h3{margin:15px 0 3px}.cv small{color:#777}.new{display:grid;place-items:center;min-height:330px;border:1.5px dashed #cfd1d6;background:transparent;color:#444}.new strong{font-size:18px}.hidden{display:none}
-    @media(prefers-color-scheme:dark){body[data-theme="system"]{background:#0f1013;color:#f4f5f7}.shell[data-theme="system"]{background:#0f1013}.shell[data-theme="system"] .card{background:#17191e;border-color:#292c33;box-shadow:none}.shell[data-theme="system"] p{color:#a8acb5}.shell[data-theme="system"] .tabs{background:#22252b}.shell[data-theme="system"] .tabs button.active{background:#30333a;color:#fff}.shell[data-theme="system"] .field input{background:#121419;color:#fff;border-color:#343740}.shell[data-theme="system"] .primary{background:#fff;color:#111}}
-    body[data-theme="dark"]{background:#0f1013;color:#f4f5f7}.shell[data-theme="dark"]{background:#0f1013}.shell[data-theme="dark"] .card{background:#17191e;border-color:#292c33;box-shadow:none}.shell[data-theme="dark"] p{color:#a8acb5}.shell[data-theme="dark"] .tabs{background:#22252b}.shell[data-theme="dark"] .tabs button.active{background:#30333a;color:#fff}.shell[data-theme="dark"] .field input{background:#121419;color:#fff;border-color:#343740}.shell[data-theme="dark"] .primary{background:#fff;color:#111}
-  </style>
-</head>
-<body data-theme="system">
-<div id="app"></div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-const SUPABASE_URL='https://qoidjubuqycjnzmjswvv.supabase.co';
-const SUPABASE_KEY='sb_publishable_CYjYGjZ2jFYmaE4wWwEgzg_CoyawiQQ';
-const supabase=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
-const app=document.getElementById('app');
-const logo='<div class="brand"><span class="mark"></span><span>CV Studio</span></div>';
-function login(){app.innerHTML=`<main class="shell"><section class="card"><div>${logo}</div><h1>Créez votre CV professionnel.</h1><p>Un espace simple pour créer, gérer et partager vos CV.</p><div class="tabs"><button id="loginTab" class="active">Connexion</button><button id="signupTab">Créer un compte</button></div><form id="authForm"><div class="field"><label for="email">Adresse e-mail</label><input id="email" type="email" autocomplete="email" required placeholder="vous@exemple.fr"></div><div class="field"><label for="password">Mot de passe</label><input id="password" type="password" minlength="8" autocomplete="current-password" required placeholder="8 caractères minimum"></div><button class="primary" id="submit">Se connecter</button><div id="feedback"></div></form><div class="legal">En continuant, vous acceptez les <a href="#">Conditions générales</a>.</div></section></main>`;
-let mode='login';const lt=document.getElementById('loginTab'),st=document.getElementById('signupTab'),submit=document.getElementById('submit');
-function setMode(m){mode=m;lt.classList.toggle('active',m==='login');st.classList.toggle('active',m==='signup');submit.textContent=m==='login'?'Se connecter':'Créer mon compte';document.getElementById('password').autocomplete=m==='login'?'current-password':'new-password'}
-lt.onclick=()=>setMode('login');st.onclick=()=>setMode('signup');
-document.getElementById('authForm').onsubmit=async e=>{e.preventDefault();const email=document.getElementById('email').value.trim();const password=document.getElementById('password').value;const feedback=document.getElementById('feedback');submit.disabled=true;feedback.innerHTML='';let result;if(mode==='login')result=await supabase.auth.signInWithPassword({email,password});else result=await supabase.auth.signUp({email,password});submit.disabled=false;if(result.error){feedback.innerHTML='<div class="error">'+result.error.message+'</div>';return}if(mode==='signup' && !result.data.session){feedback.innerHTML='<div class="error">La confirmation e-mail est encore activée dans Supabase. Désactivez-la dans Authentication → Providers → Email.</div>';return}location.reload()};}
-function dashboard(user){app.innerHTML=`<main class="dashboard"><header class="top">${logo}<button class="account" id="logout">Se déconnecter</button></header><section class="content"><p>Bonjour, ${user.email}</p><h1>Mes CV</h1><div class="grid"><article class="cv new" id="new"><div><strong>Créer un CV</strong><p>Commencer avec une structure professionnelle.</p></div></article></div></section></main>`;document.getElementById('logout').onclick=async()=>{await supabase.auth.signOut();location.reload()};document.getElementById('new').onclick=async()=>{const content={header:{name:'Prénom NOM',headline:'Titre professionnel',contact:[],links:[]},sections:[{id:crypto.randomUUID(),title:'Expérience',rows:[]}]};const {error}=await supabase.from('resumes').insert({user_id:user.id,title:'Mon CV',content});if(error)alert(error.message);else alert('CV créé. L’éditeur complet sera chargé dans la prochaine étape.')}}
-async function start(){const {data}=await supabase.auth.getSession();if(data.session)dashboard(data.session.user);else login()};start();
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CV Studio — créez, éditez et partagez des CV professionnels." />
+    <title>CV Studio</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
