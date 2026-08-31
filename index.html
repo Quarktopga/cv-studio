@@ -1,41 +1,12 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="CV Studio — créez, éditez et partagez des CV professionnels." />
-  <meta name="theme-color" content="#ffffff" />
-  <title>CV Studio</title>
-  <style>
-    :root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #111827; background: #f8fafc; }
-    * { box-sizing: border-box; }
-    body { margin: 0; min-width: 320px; }
-    .shell { min-height: 100vh; display: grid; place-items: center; padding: 32px; }
-    .card { width: min(760px, 100%); background: white; border: 1px solid #e5e7eb; border-radius: 20px; padding: 40px; box-shadow: 0 16px 50px rgba(15,23,42,.08); }
-    .brand { display:flex; align-items:center; gap:12px; font-weight:700; font-size:20px; }
-    .mark { width:36px; height:36px; border-radius:10px; background:#111827; color:white; display:grid; place-items:center; font-weight:800; }
-    h1 { font-size:42px; line-height:1.08; letter-spacing:-.04em; margin:48px 0 16px; }
-    p { color:#64748b; font-size:17px; line-height:1.65; }
-    .actions { display:flex; gap:12px; margin-top:28px; flex-wrap:wrap; }
-    a { text-decoration:none; }
-    .button { display:inline-flex; align-items:center; justify-content:center; padding:12px 18px; border-radius:10px; font-weight:600; border:1px solid #d1d5db; color:#111827; background:#fff; }
-    .primary { background:#111827; color:#fff; border-color:#111827; }
-    footer { margin-top:40px; padding-top:20px; border-top:1px solid #e5e7eb; color:#94a3b8; font-size:13px; }
-    @media (prefers-color-scheme: dark) { :root { color:#f8fafc; background:#0b1120; } .card { background:#111827; border-color:#1f2937; } p { color:#94a3b8; } .button { background:#111827; color:#f8fafc; border-color:#374151; } .primary { background:#f8fafc; color:#111827; border-color:#f8fafc; } footer { border-color:#1f2937; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="CV Studio — créez et partagez des CV professionnels.">
+<title>CV Studio</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
-<body>
-  <main class="shell">
-    <section class="card">
-      <div class="brand"><span class="mark">CV</span><span>CV Studio</span></div>
-      <h1>Votre CV.<br>Votre prochaine opportunité.</h1>
-      <p>Créez, personnalisez et partagez un CV professionnel depuis une interface simple et élégante.</p>
-      <div class="actions">
-        <a class="button primary" href="https://quarktopga.github.io/cv-studio/">Ouvrir CV Studio</a>
-        <a class="button" href="https://github.com/Quarktopga/cv-studio">Voir le projet</a>
-      </div>
-      <footer>© 2026 Georges-Antoine de Boissieu · CV Studio</footer>
-    </section>
-  </main>
-</body>
+<body><div id="app"></div><script src="app2.js"></script></body>
 </html>
